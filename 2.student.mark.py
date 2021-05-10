@@ -9,15 +9,12 @@ class Student:
         self.__studentName = studentName
         self.__studentID = studentID
         self.__studentDOB = studentDOB
-        studentList.append(self)
    
-    def get_studentName(self):
+   def get_studentName(self):
         return self.__studentName
-    
-    def get_studentID(self):
+   def get_studentID(self):
         return self.__studentID
-
-    def get_studentDOB(self):
+   def get_studentDOB(self):
         return self.__studentDOB
 
 class Course:
@@ -50,26 +47,6 @@ class Mark:
         return self.__mark
 
 
-
-
-
-def selection ():
-    while True:
-        firstSl = print("1.Student Info")
-        secondSl = print("2.Course Info")
-        thirdSl = print("3.Mark Info")
-        fourthSl = print("4.Exit")
-        
-        mySl = input("My Choice: ")    
-        
-        if mySl == "1":
-            return studentInput()
-        elif mySl == "2":
-            return courseInput()
-        elif mySl == "3":
-            return markInput()  
-        elif mySl == "4":
-            break
 
 def studentInput():
     studentNum = input("Enter numbers of student: ")
