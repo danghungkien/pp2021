@@ -1,12 +1,10 @@
 
 import math
-# import numpy
 
 
 students = []
 studentsDict = []
 gpas = []
-
 
 def findGPA(studentObj):
     GPA = 0
@@ -14,13 +12,11 @@ def findGPA(studentObj):
     all_credits = 0
 
     for course in studentObj.courses:
-        grade_point = course.mark * course.credit
+        grade_point = course.credit * course.mark
         all_grade_points += grade_point
         all_credits += course.credit
-
     GPA = all_grade_points/all_credits
     studentObj.gpa = GPA
-
     return GPA
 
 
@@ -63,7 +59,7 @@ class Input:
             elif mySl == "4":
                 break
 
-    # input student info
+
     def studentInput(self):
         studentNum = input("Enter numbers of student: ")
         for i in range(int(studentNum)):
@@ -74,7 +70,7 @@ class Input:
                 {'student Name': studentName, 'studentID': studentID, 'student DOB': studentDOB})
         print(students)
 
-    # input course info
+  
 
     def courseInput(self):
         courseNum = input("Enter number of courses: ")
@@ -87,50 +83,30 @@ class Input:
     # input grade
 
 
-
 my_input = Input()
 my_input.selection()
 
 
 stu1 = Student(1, "longle", 1)
-crs1 = Course("c1", "python", 3, 11)
-crs2 = Course("c2", "s&s", 3, 12)
-crs3 = Course("c3", "DSA", 5, 15)
+crs1 = Course("c1", "python", 5, 15)
+crs2 = Course("c2", "s&s",6, 17)
+crs3 = Course("c3", "DSA",8, 30)
 
 stu1.courses.append(crs1)
 stu1.courses.append(crs2)
 stu1.courses.append(crs3)
 
 
-stu2 = Student(2, "dhkien", 1)
-crs4 = Course("c1", "python", 3, 10)
-crs5 = Course("c2", "s&s", 3, 10)
-crs6 = Course("c3", "DSA", 5, 13)
-
-stu2.courses.append(crs4)
-stu2.courses.append(crs5)
-stu2.courses.append(crs6)
-
-
-students.append(stu1)
-students.append(stu2)
-print(len(students))
-
-
-# find GPA of all students
+stu2 = Student(8, "dhkien",4)
+crs4 = Course("c1", "python", 6, 8
+crs5 = Course("c2", "s&s",4,8)
+crs6 = Course("c3", "DSA", 9.12)
+              
 for student in students:
     findGPA(student)
-
-# print(students[0].gpa)
-
-# Convert object to dictionary
 for student in students:
     studentsDict.append(vars(student))
 
-print(studentsDict)
+newnewStudents = sorted(studentsDict, key=lambda k: k['gpa'], reverse=False)
 
-# Sort students descendingly
-newStudents = sorted(studentsDict, key=lambda k: k['gpa'], reverse=False)
-
-
-print(newStudents)
+print(newnewStudents)
